@@ -16,18 +16,18 @@
     
     
 
-    <meta name="description" content="开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的性的。
+    <meta name="description" content="开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的心得。
 1 定义常量less可以使用@常量名来存储页面上元素信息。这就可以在切图时，将页面的页面宽度和背景颜色，等等信息先存储起来，不用在码代码时，再去p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="less | ThinkLife">
 <meta property="og:url" content="http://yoursite.com/2016/12/29/less/index.html">
 <meta property="og:site_name" content="ThinkLife">
-<meta property="og:description" content="开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的性的。
+<meta property="og:description" content="开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的心得。
 1 定义常量less可以使用@常量名来存储页面上元素信息。这就可以在切图时，将页面的页面宽度和背景颜色，等等信息先存储起来，不用在码代码时，再去p">
-<meta property="og:updated_time" content="2016-12-29T15:15:21.644Z">
+<meta property="og:updated_time" content="2016-12-29T15:16:43.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="less | ThinkLife">
-<meta name="twitter:description" content="开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的性的。
+<meta name="twitter:description" content="开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的心得。
 1 定义常量less可以使用@常量名来存储页面上元素信息。这就可以在切图时，将页面的页面宽度和背景颜色，等等信息先存储起来，不用在码代码时，再去p">
     
     
@@ -166,7 +166,7 @@ classes that you can use:
           
              &#8226; 标签:
             <font class="tags">
-              <a class="tags-link" href="/tags/css-language/">css language</a>
+              <a class="tags-link" href="/tags/less-base/">less base</a>
             </font>
           
 
@@ -178,7 +178,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。<br>毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的性的。</p>
+    <p>开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。<br>毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的心得。</p>
 <h2 id="1-定义常量"><a href="#1-定义常量" class="headerlink" title="1 定义常量"></a>1 定义常量</h2><p>less可以使用<code>@常量名</code>来存储页面上元素信息。<br>这就可以在切图时，将页面的页面宽度和背景颜色，等等信息先存储起来，不用在码代码时，再去psd中取色，量长度等等。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@pagewidth:980px;</div><div class="line">@bgcolor:#999999</div></pre></td></tr></table></figure>
 <p>还有一种方式就是使用class类来存储<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.title</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">16px</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#666</span>;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">"Microsoft YaHei"</span>;</div><div class="line">    <span class="attribute">font-weight</span>:normal;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
