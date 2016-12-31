@@ -1,331 +1,284 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>ThinkLife</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="ThinkLife" type="application/atom+xml">
     
-
-    <title>
-      ThinkLife 
-    </title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
-      <meta name="author" content="Jake Seru">
-    
-    
-      <meta name="description" content="Think with your life!">
-    
-
-    <meta name="description" content="Think with your life!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ThinkLife">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="ThinkLife">
-<meta property="og:description" content="Think with your life!">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ThinkLife">
-<meta name="twitter:description" content="Think with your life!">
-    
-    
-    
-      <link rel="icon" type="image/x-icon" href="/favicon.png">
-    
-    <link rel="stylesheet" href="/css/uno.css">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" href="/css/archive.css">
-    <link rel="stylesheet" href="/css/china-social-icon.css">
-
 </head>
+
 <body>
 
-    <span class="mobile btn-mobile-menu">
-        <i class="icon icon-list btn-mobile-menu__icon"></i>
-        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
-    </span>
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">ThinkLife</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
 
-    
- 
-<header class="panel-cover">
-
-
-  <div class="panel-main">
-
-  
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-
-        
-
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ThinkLife</a></h1>
-        <hr class="panel-cover__divider" />
-
-        
-
-        <div class="navigation-wrapper">
-
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-
-              
-                
-                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
-              
-                
-                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
-              
-                
-                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
-              
-
-            </ul>
-          </nav>
-
-          <!-- ----------------------------
-To add a new social icon simply duplicate one of the list items from below
-and change the class in the <i> tag to match the desired social network
-and then add your link to the <a>. Here is a full list of social network
-classes that you can use:
-
-    icon-social-500px
-    icon-social-behance
-    icon-social-delicious
-    icon-social-designer-news
-    icon-social-deviant-art
-    icon-social-digg
-    icon-social-dribbble
-    icon-social-facebook
-    icon-social-flickr
-    icon-social-forrst
-    icon-social-foursquare
-    icon-social-github
-    icon-social-google-plus
-    icon-social-hi5
-    icon-social-instagram
-    icon-social-lastfm
-    icon-social-linkedin
-    icon-social-medium
-    icon-social-myspace
-    icon-social-path
-    icon-social-pinterest
-    icon-social-rdio
-    icon-social-reddit
-    icon-social-skype
-    icon-social-spotify
-    icon-social-stack-overflow
-    icon-social-steam
-    icon-social-stumbleupon
-    icon-social-treehouse
-    icon-social-tumblr
-    icon-social-twitter
-    icon-social-vimeo
-    icon-social-xbox
-    icon-social-yelp
-    icon-social-youtube
-    icon-social-zerply
-    icon-mail
-
--------------------------------->
-
-<!-- add social info here -->
+	<main>
+		
 
 
 
-        </div>
+	<article>
+	
+		<h1><a href="/2016/12/31/jsclosure/">jsclosure</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2016-12-31</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/javascript/">javascript</a>
+			</span>
+		
+	</div>
 
-      </div>
+	
 
-    </div>
+	
+		<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">outfun</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> num=<span class="number">1</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">infun</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(num++);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> getnum=outfun();</div><div class="line">getnum();</div><div class="line"><span class="built_in">console</span>.log(num);</div></pre></td></tr></table></figure>
+<p>首先先声明一个函数outfun，在在其中定义一个变量num和一个函数infun,再将infun返回到函数外面（暴露到外部）。新声明个函数用来保存outfun的结果，也就是得到infun。此时的getnum方法就为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">getnum=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(num++);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注意这里的num是outfun中的私有变量，在outfun函数外是访问不到的。可以在outfun函数打印一下num，结果是undefined;</p>
+<p>这时候就形成了闭包，只有getnum才能访问到num这个变量。<br>也就是闭包的好处，可以保护变量不被后面的代码影响，其缺点也显而易见了，js垃圾回收机制就无法回收内存了。</p>
 
-    <div class="panel-cover--overlay"></div>
-  </div>
-</header>
+	
 
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner entry">
-            
+	
 
-
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
-    
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/12/31/jsclosure/" title="link to jsclosure">jsclosure</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-12-31" class="post-list__meta--date date">2016-12-31</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/12/29/less/" title="link to less">less</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-12-29" class="post-list__meta--date date">2016-12-29</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/12/27/staticStorage/" title="link to StaticStorage">StaticStorage</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-12-27" class="post-list__meta--date date">2016-12-27</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/12/26/angularTips/" title="link to AngularTips">AngularTips</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-12-26" class="post-list__meta--date date">2016-12-26</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/12/26/carouselFigure/" title="link to CarouselFigure">CarouselFigure</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-12-26" class="post-list__meta--date date">2016-12-26</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/12/20/hello-world/" title="link to Hello World">Hello World</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-12-20" class="post-list__meta--date date">2016-12-20</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-    
-
-    <span class="pagination__page-number"> 1 / 1</span>
-    
-    
-</nav>
+</article>
 
 
+
+
+	<article>
+	
+		<h1><a href="/2016/12/29/less/">less</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2016-12-29</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/less-base/">less base</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>开始工作到现在写了几个静态页面，尝试使用Less来编写样式。原本是想使用less来减少样式代码量，可能是水平有限，写出来的less比css还要多，但less还是使我提高了效率。<br>毕竟自动编译出来的代码，不用再去格式化，来迎合代码规范。记录一下使用的心得。</p>
+<h2 id="1-定义常量"><a href="#1-定义常量" class="headerlink" title="1 定义常量"></a>1 定义常量</h2><p>less可以使用<code>@常量名</code>来存储页面上元素信息。<br>这就可以在切图时，将页面的页面宽度和背景颜色，等等信息先存储起来，不用在码代码时，再去psd中取色，量长度等等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@pagewidth:980px;</div><div class="line">@bgcolor:#999999</div></pre></td></tr></table></figure>
+<p>还有一种方式就是使用class类来存储<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.title</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">16px</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#666</span>;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">"Microsoft YaHei"</span>;</div><div class="line">    <span class="attribute">font-weight</span>:normal;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>引用的时候<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.element&#123;</div><div class="line">    width:@pagewidth;</div><div class="line">    background:@bgcolor;</div><div class="line">    .title;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2-css的混入"><a href="#2-css的混入" class="headerlink" title="2 css的混入"></a>2 css的混入</h2><p>在css中编写父元素和子元素需要写两个选择器写在两个{}中，其层级关系也没不明显。<br>在less中就可以混入css，就是在父元素的样式{}中，再使用选择器来选择子元素，如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.father&#123;</div><div class="line">    width:@pagewidth;</div><div class="line">    height:200px;</div><div class="line">    .child&#123;</div><div class="line">        width:100px;</div><div class="line">        height:200px;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出成css代码就是<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">980px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.father</span> <span class="selector-class">.child</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在css中可以<code>.father&gt;div</code>来获取子元素，在less中就可以使用&amp;符号来链接混入代码的选择器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.father&#123;</div><div class="line">    width:@pagewidth;</div><div class="line">    &amp;&gt;div&#123;</div><div class="line">        height:200px;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出css<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">980px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.father</span>&gt;<span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="3-运算"><a href="#3-运算" class="headerlink" title="3 运算"></a>3 运算</h2><p>在less中任何数字（包括颜色）是可以进行运算的，比如高度宽度等等。运算是支持+-x/等等的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@color:#111;</div><div class="line">.elem&#123;</div><div class="line">    width:100 + 30px;</div><div class="line">    height:100 * 2 px;</div><div class="line">    color:@color*2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>css输出<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.elem</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">130px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#222</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="4-函数"><a href="#4-函数" class="headerlink" title="4 函数"></a>4 函数</h2><p>在less中你可以定义一个函数，然后再调用它。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.setborderradius(@px)&#123;</div><div class="line">    border-radius:@px;</div><div class="line">    -webkit-border-radius:@px;</div><div class="line">    -moz-border-radius:@px;</div><div class="line">    -o-border-radius:@px;</div><div class="line">&#125;</div><div class="line">.elem&#123;</div><div class="line">    .setborderradius(5px);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>css输出<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.elem</span>&#123;</div><div class="line">    <span class="attribute">border-raidus</span>:<span class="number">5px</span>;</div><div class="line">    <span class="attribute">-webkit-border-radius</span>:<span class="number">5px</span>;</div><div class="line">    <span class="attribute">-moz-border-radius</span>:<span class="number">5px</span>;</div><div class="line">    <span class="attribute">-o-border-radius</span>:<span class="number">5px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
+		<h1><a href="/2016/12/27/staticStorage/">StaticStorage</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2016-12-27</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/收集静态存储空间/">收集静态存储空间</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<h2 id="1-github-静态页"><a href="#1-github-静态页" class="headerlink" title="1 github 静态页"></a>1 github 静态页</h2><p>githubpages搭配hexo，可以建立自己的博客，想要个性化一点，还可以绑定自己注册的域名。特别要注意的是因为github的服务器是在国外，也免去了备案的问题，所以只需要做一下域名解析就可以通过私有域名访问啦。<br><a href="https://pages.github.com/" target="_blank" rel="external">github pages</a></p>
+<h2 id="2-阿里云"><a href="#2-阿里云" class="headerlink" title="2 阿里云"></a>2 阿里云</h2><p>阿里云对象存储OSS资源包<br>相比于github静态页，它的空间可以选择大小，最大可以选择几百TB，不过是收费的，但是价格还是比较便宜的，40GB年也就9软妹币。如果在阿里云有ESC主机的话，在同一个局域网下，是不收流量费的。但它最大的问题是自定义域名是需要备案的。没备案域名就只能通过很长很长很长的域名来访问，这当然是不能接受的啦。我的解决办法是给它分配一个二级域名，当然土豪可以再注册个域名。</p>
+<h2 id="3-七牛云"><a href="#3-七牛云" class="headerlink" title="3 七牛云"></a>3 七牛云</h2><p>新用户免费10G空间，但自定义域名需要备案，且需要10元余额</p>
+<h2 id="4-surge"><a href="#4-surge" class="headerlink" title="4 surge"></a>4 surge</h2><p>有免费套餐和收费套餐，支持CDN，自定义域名，SSL等功能。不过是国外的，速度不一定行。非常类似githubpages。关键是国内可以访问<br><a href="https://surge.sh" target="_blank" rel="external">surge</a></p>
+<h2 id="5-亚马逊aws"><a href="#5-亚马逊aws" class="headerlink" title="5 亚马逊aws"></a>5 亚马逊aws</h2><p>新用户送一十二个月免费的免费套餐，但需要支付一美元验证用户（验证成功后退回），也就是说需要visa银行卡。</p>
+<h2 id="6-Google-Cloud-Platform"><a href="#6-Google-Cloud-Platform" class="headerlink" title="6 Google Cloud Platform"></a>6 Google Cloud Platform</h2><p>同亚马逊需要验证信用卡账户，同时还需要科学上网。</p>
+<p>未完待续。。。。</p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
+		<h1><a href="/2016/12/26/angularTips/">AngularTips</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2016-12-26</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/angular-1/">angular 1</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>最近用angular1做了个项目，项目马上快结束了，但遇到个大问题–网站的SEO优化。按照SEO的同事的要求，需要在地址栏中输入参数就可以查询。不过我们使用的是ui-route,是使用下面这种方式来进行页面间传值:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.state(<span class="string">'tab.result'</span>,&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">'/result/:country/:city/:region/:pricerange/:room/:forsale/:type/:indoor/:outdoor'</span>,</div><div class="line">    <span class="attr">views</span>:&#123;</div><div class="line">        <span class="string">'tab-dash'</span>:&#123;</div><div class="line">            <span class="attr">templateUrl</span>:<span class="string">'templates/result.html'</span>,</div><div class="line">            <span class="attr">controller</span>:<span class="string">'resultCtrl'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>这种传值方法有个很大的问题，就是参数为空时，url地址就会产生很多斜杠<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result/country////////</div></pre></td></tr></table></figure></p>
+<p>后来请教大神，才得知上面这种方式是参数逼传，还有一种是参数可以选传<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.state(<span class="string">'tab.refresh'</span>,&#123;</div><div class="line">    <span class="attr">url</span>:<span class="string">'/refresh/:country?/:city?/:region?/:pricerange?/:room?/:forsale?/:type?/:indoor?/:outdoor?'</span>,</div><div class="line">    <span class="attr">views</span>:&#123;</div><div class="line">        <span class="string">'tab-dash'</span>:&#123;</div><div class="line">            <span class="attr">templateUrl</span>:<span class="string">'templates/refresh.html'</span>,</div><div class="line">            <span class="attr">controller</span>:<span class="string">'refreshCtrl'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>修改后的url地址就为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">refresh?country=US&amp;city=1231</div></pre></td></tr></table></figure></p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
+		<h1><a href="/2016/12/26/carouselFigure/">CarouselFigure</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2016-12-26</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/无限轮播图Demo/">无限轮播图Demo</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>轮播图是前端页面中最常用的组件，尤其在广告页和首页中。虽然有各种各样的框架可以实现这个功能，但引入框架会使得代码不干净（强迫症。。。），还会带来一些问题，比如代码体积变大，不必要的请求等等。所以偷个懒，写个轮播Demo,可以重复利用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"carousel-body"</span>&gt;</span></div><div class="line">    	<span class="comment">&lt;!--一共有14张图片，为了无限轮播，在第一张前加上最后一张。同理在最后一张后加上第一张--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/part1a_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>距离墨尔本皇家植物公园约2公里，该植物园是当今世界上设计最好的植物园之一<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta14_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>高档公寓与奢侈品店的综合体，两栋地标建筑完美展现出建筑的几何之美。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta13_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>Capitol Grand是墨尔本首个六星级住宅项目，坐落于墨尔本著名富人区南雅拉中心地段。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta12_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>底层规划为三个楼层的奢侈品零售区，零售区以上的楼层将设一组高端公寓套房<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta11_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>园区内设有宜人的绿化景观园林，打开窗户，园区的景观便一览无余<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta10_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>顶层私人会所拥有绝美海湾景致的无边界泳池，俯抱墨尔本令人难以置信的魅力风景<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta9_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>大厦内的公寓套房将采用精致的设计，安装落地窗，拥有宽敞明亮的空间和华丽的饰面<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta8_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>所有公寓套房均采用优质材料进行装修，装配欧式设备、高端厨具电器<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta7_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>3层时尚购物中心上盖有豪华住宅单位，格局方正、大气，尽显奢华生活<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta6_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>大楼将设有带先进设施的健身馆，让业主享受到大楼所提供的贴心服务<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta5_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>公寓套房内大面积的落地窗设计，让房间的每个角落都充满阳光<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta4_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>南雅拉提供奢华、便捷的生活，设有电车、火车和巴士服务，还有多所名校和漂亮的公园<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta3_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>Toorak路上的8号电车，可直达墨尔本大学、途径St Kilda路商业区和墨尔本CBD<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta2_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>距离雅拉河只有8分钟的路程，闲暇之余，可以和家人一起惬意的漫步雅拉河畔<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/part1a_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>距离墨尔本皇家植物公园约2公里，该植物园是当今世界上设计最好的植物园之一<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/partA/parta14_03.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>高档公寓与奢侈品店的综合体，两栋地标建筑完美展现出建筑的几何之美。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"prew-button"</span>&gt;</span>&amp;lt;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ctrls"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"next-button"</span>&gt;</span>&amp;gt;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>以上为html代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-class">.part-style</span> <span class="selector-class">.center</span> &gt; <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">width</span>: <span class="number">980px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.carousel-body</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">15680px</span>;</div><div class="line">  <span class="attribute">left</span>: -<span class="number">980px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.carousel-body</span> <span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.carousel-body</span> <span class="selector-tag">li</span> <span class="selector-tag">img</span> &#123;</div><div class="line">  <span class="attribute">vertical-align</span>: bottom;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.carousel-body</span> <span class="selector-tag">li</span> <span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">980px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.5);</div><div class="line">  <span class="attribute">height</span>: <span class="number">34px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">34px</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">font-family</span>: <span class="string">"冬青黑体简体中文 W3"</span>, <span class="string">"黑体"</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.ctrls</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">980px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">45px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.ctrls</span> <span class="selector-tag">span</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#FFFFFF</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">6px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.ctrls</span> <span class="selector-tag">span</span><span class="selector-class">.active</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#363636</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.prew-button</span>,</div><div class="line"><span class="selector-class">.next-button</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#996636</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">width</span>: <span class="number">24px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">24px</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">12px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">24px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">font-family</span>: <span class="string">"冬青黑体简体中文 W3"</span>, <span class="string">"黑体"</span>;</div><div class="line">  <span class="attribute">font-weight</span>: normal;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">42px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.prew-button</span> &#123;</div><div class="line">  <span class="attribute">left</span>: <span class="number">284px</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">10</span>;</div><div class="line">  <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.next-button</span> &#123;</div><div class="line">  <span class="attribute">right</span>: <span class="number">286px</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">10</span>;</div><div class="line">  <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上为css代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法主体</span></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> $content = $(<span class="string">'.carousel-body'</span>);</div><div class="line">    <span class="keyword">var</span> $ctrl=$(<span class="string">'.ctrls span'</span>);</div><div class="line">    <span class="keyword">var</span> index = <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> timmer = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">var</span> pass = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        clearInterval(timmer);</div><div class="line">        timmer=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(!pass)&#123;</div><div class="line">                index++;</div><div class="line">                <span class="keyword">if</span>(index&gt;<span class="number">14</span>)&#123;</div><div class="line">                    index=<span class="number">1</span>;</div><div class="line">                    $content.css(<span class="string">"left"</span>,<span class="string">"0px"</span>);</div><div class="line">                    $content.animate(&#123;<span class="string">"left"</span>:<span class="number">-980</span>+<span class="string">"px"</span>&#125;,<span class="number">500</span>);</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    $content.animate(&#123;<span class="string">"left"</span>:<span class="number">-980</span>*index+<span class="string">"px"</span>&#125;,<span class="number">500</span>);</div><div class="line">                &#125;</div><div class="line">                $ctrl.removeClass(<span class="string">"active"</span>);</div><div class="line">                $ctrl[index<span class="number">-1</span>].className=<span class="string">"active"</span>;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                pass=<span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;,<span class="number">1000</span>)</div><div class="line">    &#125;</div><div class="line">    start();</div><div class="line">    $content.on(<span class="string">"mouseover"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        clearInterval(timmer);</div><div class="line">    &#125;)</div><div class="line">    $content.on(<span class="string">"mouseout"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        start();</div><div class="line">    &#125;)</div><div class="line">    $(<span class="string">'.ctrls span'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        index=$(<span class="keyword">this</span>).index() + <span class="number">1</span>;</div><div class="line">        update();</div><div class="line">    &#125;);</div><div class="line">    $(<span class="string">'.prew-button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        index--;</div><div class="line">        <span class="keyword">if</span>(index&lt;=<span class="number">0</span>) &#123;</div><div class="line">            index = <span class="number">14</span>;</div><div class="line">            $content.css(<span class="string">"left"</span>, <span class="number">-980</span> * <span class="number">15</span> + <span class="string">"px"</span>);</div><div class="line">        &#125;</div><div class="line">        update();</div><div class="line">    &#125;)</div><div class="line">    $(<span class="string">'.next-button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        index++;</div><div class="line">        <span class="keyword">if</span>(index&gt;<span class="number">14</span>) &#123;</div><div class="line">            index = <span class="number">1</span>;</div><div class="line">            $content.css(<span class="string">"left"</span>, <span class="number">-980</span> * <span class="number">0</span> + <span class="string">"px"</span>);</div><div class="line">        &#125;</div><div class="line">        update();</div><div class="line">    &#125;)</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        pass=<span class="literal">true</span>;</div><div class="line">        clearInterval(timmer);</div><div class="line">        $ctrl.removeClass(<span class="string">"active"</span>);</div><div class="line">        $ctrl[index<span class="number">-1</span>].className=<span class="string">"active"</span>;</div><div class="line">        $content.animate(&#123;<span class="string">"left"</span>:<span class="number">-980</span>*index+<span class="string">"px"</span>&#125;,&#123; <span class="attr">duration</span>: <span class="number">500</span>, <span class="attr">queue</span>: <span class="literal">false</span>, <span class="attr">complete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;start();&#125; &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>以上为javascript代码</p>
+<p>当然在同一个页面中可以不只有一个轮播，所以有必要把他封装成一个方法，然后传入一个对象，调用执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> carouse=<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> $content = item.$content;</div><div class="line">    <span class="keyword">var</span> $ctrl = item.$ctrl;</div><div class="line">    <span class="keyword">var</span> $ctrlsspan = item.$ctrlsspan;</div><div class="line">    <span class="keyword">var</span> $prew = item.$prew;</div><div class="line">    <span class="keyword">var</span> $next = item.$next;</div><div class="line">    <span class="keyword">var</span> index = <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> pages = item.pages;</div><div class="line">    <span class="keyword">var</span> time = item.time;</div><div class="line">    <span class="keyword">var</span> timmer = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">var</span> pass = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        clearInterval(timmer);</div><div class="line">        timmer=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(!pass)&#123;</div><div class="line">                index++;</div><div class="line">                <span class="keyword">if</span>(index&gt;pages)&#123;</div><div class="line">                    index=<span class="number">1</span>;</div><div class="line">                    $content.css(<span class="string">"left"</span>,<span class="string">"0px"</span>);</div><div class="line">                    $content.animate(&#123;<span class="string">"left"</span>:<span class="number">-980</span>+<span class="string">"px"</span>&#125;,<span class="number">500</span>);</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    $content.animate(&#123;<span class="string">"left"</span>:<span class="number">-980</span>*index+<span class="string">"px"</span>&#125;,<span class="number">500</span>);</div><div class="line">                &#125;</div><div class="line">                $ctrl.removeClass(<span class="string">"active"</span>);</div><div class="line">                $ctrl[index<span class="number">-1</span>].className=<span class="string">"active"</span>;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                pass=<span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;,time)</div><div class="line">    &#125;</div><div class="line">    start();</div><div class="line">    $content.on(<span class="string">"mouseover"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        clearInterval(timmer);</div><div class="line">    &#125;)</div><div class="line">    $content.on(<span class="string">"mouseout"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        start();</div><div class="line">    &#125;)</div><div class="line">    $ctrlsspan.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        index=$(<span class="keyword">this</span>).index() + <span class="number">1</span>;</div><div class="line">        update();</div><div class="line">    &#125;);</div><div class="line">    $prew.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        index--;</div><div class="line">        <span class="keyword">if</span>(index&lt;=<span class="number">0</span>) &#123;</div><div class="line">            index = pages;</div><div class="line">            $content.css(<span class="string">"left"</span>, <span class="number">-980</span> * (pages+<span class="number">1</span>) + <span class="string">"px"</span>);</div><div class="line">        &#125;</div><div class="line">        update();</div><div class="line">    &#125;)</div><div class="line">    $next.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        index++;</div><div class="line">        <span class="keyword">if</span>(index&gt;pages) &#123;</div><div class="line">            index = <span class="number">1</span>;</div><div class="line">            $content.css(<span class="string">"left"</span>, <span class="number">-980</span> * <span class="number">0</span> + <span class="string">"px"</span>);</div><div class="line">        &#125;</div><div class="line">        update();</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">var</span> update = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        pass=<span class="literal">true</span>;</div><div class="line">        clearInterval(timmer);</div><div class="line">        $ctrl.removeClass(<span class="string">"active"</span>);</div><div class="line">        $ctrl[index<span class="number">-1</span>].className=<span class="string">"active"</span>;</div><div class="line">        $content.animate(&#123;<span class="string">"left"</span>:<span class="number">-980</span>*index+<span class="string">"px"</span>&#125;,&#123; <span class="attr">duration</span>: <span class="number">500</span>, <span class="attr">queue</span>: <span class="literal">false</span>, <span class="attr">complete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;start();&#125; &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//传入的对象</span></div><div class="line"><span class="keyword">var</span> ALL=&#123;</div><div class="line">    <span class="attr">$content</span> : $(<span class="string">'#ALL .carousel-body'</span>),</div><div class="line">    <span class="attr">$ctrl</span> : $(<span class="string">'#ALL .ctrls span'</span>),</div><div class="line">    <span class="attr">$ctrlsspan</span> : $(<span class="string">'#ALL .ctrls span'</span>),</div><div class="line">    <span class="attr">$prew</span> : $(<span class="string">'#ALL .prew-button'</span>),</div><div class="line">    <span class="attr">$next</span> : $(<span class="string">'#ALL .next-button'</span>),</div><div class="line">    <span class="attr">pages</span> : <span class="number">7</span>,</div><div class="line">    <span class="attr">time</span> : <span class="number">1000</span></div><div class="line">&#125;</div><div class="line">carouse(ALL);</div></pre></td></tr></table></figure></p>
+<p>下一步我打算封装成一个jq插件<br>未完待续。。</p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
+		<h1><a href="/2016/12/20/hello-world/">Hello World</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2016-12-20</span><br />
+		
+		
+	</div>
+
+	
+
+	
+		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+	
+
+	
+
+</article>
+
+
+
+
+
+
+	<span class="different-posts">📕 end of posts 📕</span>
+
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
 </div>
-            <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2014-2017. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
-    
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2016 Jake Seru | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
 </footer>
-        </div>
-    </div>
-
-    <!-- js files -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/scale.fix.js"></script>
-    
-
-    
-
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript"> 
-        $(document).ready(function(){
-            MathJax.Hub.Config({ 
-                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
-            });
-        });
-    </script>
 
 
-    
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P3RWZJD');</script>
-<!-- End Google Tag Manager -->
-
-<!--<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-89551672-1', 'auto');
-  ga('send', 'pageview');
-
-</script>-->
-    
-    <!--kill ie6 -->
-<!--[if IE 6]>
-  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
-<![endif]-->
 
 </body>
+
 </html>
