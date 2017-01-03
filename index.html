@@ -45,6 +45,68 @@
 
 	<article>
 	
+		<h1><a href="/2017/01/03/googleadinionic/">googleadinionic</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2017-01-03</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/ionic-angular-googleAD/">ionic angular googleAD</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>广告是开发app的一大收入来源，所以讲广告加入app变得很重要。本文只描述在angular+ionic的app中如何加入广告。</p>
+<p>1 在html中加入谷歌广告代码，这是最简单的方式。但是这有局限性，不能根据内容的多少来加载广告。</p>
+<p>2 使用指令的方式，在需要的位置添加，还可以repeat多条广告。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.directive(<span class="string">'googlead'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$parse, $rootScope, $compile</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">restrict</span>: <span class="string">"AE"</span>,</div><div class="line">            <span class="attr">scope</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">link</span>: <span class="function"><span class="keyword">function</span> (<span class="params">scope, elem, attr</span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> gpt=sessionStorage.getItem(<span class="string">'gpt'</span>);</div><div class="line">                <span class="keyword">if</span>(gpt==<span class="literal">undefined</span>)&#123;</div><div class="line">                    gpt=<span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">var</span> index=<span class="built_in">parseInt</span>(gpt) + <span class="number">1</span>;</div><div class="line">                sessionStorage.setItem(<span class="string">"gpt"</span>,index);</div><div class="line">                elem[<span class="number">0</span>].setAttribute(<span class="string">'id'</span>, <span class="string">'div-gpt-ad-xxxxxxxxxxxx-'</span> + index);</div><div class="line">                <span class="keyword">var</span> dom = <span class="string">'&lt;script&gt;googletag.cmd.push(function() &#123;googletag.defineSlot("/xxxxxxxx/MS_StripAd_A", [320, 50], "div-gpt-ad-xxxxxxxxxxxx-'</span> + index + <span class="string">'").addService(googletag.pubads()).setCollapseEmptyDiv(true, true);googletag.pubads().enableSingleRequest();googletag.enableServices();&#125;);googletag.cmd.push(function() &#123;googletag.display("div-gpt-ad-xxxxxxxxxxxx-'</span> + index + <span class="string">'"); &#125;);&lt;/script&gt;'</span>;</div><div class="line">                $(elem).append($compile(dom)(scope));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure></p>
+<p>先生成广告序列，然后拼装js代码，最后将代码注入到app中运行。</p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
+		<h1><a href="/2017/01/03/ionicSlide/">ionicSlide</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2017-01-03</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/ionic-angular/">ionic angular</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>ionic+angular开发app，在ios下发现一个交换上的问题。之前我从来都不知道ios有右滑动返回的效果（当然这我不用iphone有关），这就产生了一个问题，ionic应用在iphone下，右滑会有两次页面进入动画。这严重影响了用户体验，产品也不会放过啦。开始，对这个问题毫无头绪，毕竟这是在手机上出现的问题，没办法调试，只好去搜索答案，然后一个一个地尝试。但尝试了很多方法，都没有成功。其中有一个博客给了我启发，在ios下，ionic自带了一个页面切换的动画效果，而ios也有一个动画效果，这就是问题所在了。我只需要将ionic里的动画效果禁用即可。不过，禁用的方法有好几种，只有一种是可以的（对于我的app来说）。<br>在app.js中加入下面这句话。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ionicConfigProvider.views.transition(<span class="string">'none'</span>);</div></pre></td></tr></table></figure></p>
+<p>另外在附上其他禁用右滑返回的方法<br>1 在app.js中加入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ionicConfigProvider.views.swipeBackEnabled(<span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+<p>2 在<code><ionic-view></ionic-view></code>中加入<code>can-swipe-back=”false”<br></code><br>3 使用指令<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">on-swipe-left</span>=<span class="string">"swipeleftAction()"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>4 使用监控路由的方式<br><a href="http://www.songliuchen.com/Article/58.aspx" target="_blank" rel="external">链接</a><br>5 通过取消ionic自带动画效果<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ion-view</span> <span class="attr">view-title</span>=<span class="string">"个人中心"</span> <span class="attr">animation</span>=<span class="string">"no-animation"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ionicConfigProvider.views.transition(<span class="string">'none'</span>);</div></pre></td></tr></table></figure>
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
 		<h1><a href="/2016/12/31/jsclosure/">jsclosure</a></h1>
 	
 	<div class="article__infos">
@@ -279,7 +341,7 @@
 	    
 
 		<div class="footer-credit">
-			<span>© 2016 Jake Seru | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+			<span>© 2017 Jake Seru | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
 		</div>
 
 	</div>

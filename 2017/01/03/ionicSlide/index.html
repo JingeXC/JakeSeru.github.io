@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>ionicSlide | ThinkLife</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="ThinkLife" type="application/atom+xml">
+    
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-89551672-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">ThinkLife</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>ionicSlide</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2017-01-03</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/ionic-angular/">ionic angular</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>ionic+angular开发app，在ios下发现一个交换上的问题。之前我从来都不知道ios有右滑动返回的效果（当然这我不用iphone有关），这就产生了一个问题，ionic应用在iphone下，右滑会有两次页面进入动画。这严重影响了用户体验，产品也不会放过啦。开始，对这个问题毫无头绪，毕竟这是在手机上出现的问题，没办法调试，只好去搜索答案，然后一个一个地尝试。但尝试了很多方法，都没有成功。其中有一个博客给了我启发，在ios下，ionic自带了一个页面切换的动画效果，而ios也有一个动画效果，这就是问题所在了。我只需要将ionic里的动画效果禁用即可。不过，禁用的方法有好几种，只有一种是可以的（对于我的app来说）。<br>在app.js中加入下面这句话。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ionicConfigProvider.views.transition(<span class="string">'none'</span>);</div></pre></td></tr></table></figure></p>
+<p>另外在附上其他禁用右滑返回的方法<br>1 在app.js中加入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ionicConfigProvider.views.swipeBackEnabled(<span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+<p>2 在<code><ionic-view></ionic-view></code>中加入<code>can-swipe-back=”false”<br></code><br>3 使用指令<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">on-swipe-left</span>=<span class="string">"swipeleftAction()"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>4 使用监控路由的方式<br><a href="http://www.songliuchen.com/Article/58.aspx" target="_blank" rel="external">链接</a><br>5 通过取消ionic自带动画效果<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ion-view</span> <span class="attr">view-title</span>=<span class="string">"个人中心"</span> <span class="attr">animation</span>=<span class="string">"no-animation"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ionicConfigProvider.views.transition(<span class="string">'none'</span>);</div></pre></td></tr></table></figure>
+	
+
+	
+		<span class="different-posts"><a href="/2017/01/03/ionicSlide/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2017 Jake Seru | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
