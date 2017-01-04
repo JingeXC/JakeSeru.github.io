@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>landingpage | ThinkLife</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="ThinkLife" type="application/atom+xml">
+    
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-89551672-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">ThinkLife</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>landingpage</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2017-01-04</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/yeoman-gulp-bower-landingpage/">yeoman gulp bower landingpage</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>最近一直都在写着陆页(landingpage)，写多了也就烦了，每次新建项目都需要复制文件或者去下载各种各样的包。这纯粹是体力活，没有技术含量，在浪费时间。之前有在webapp的项目中看到，可以用自动化的工具来新建项目，所以突发奇想，想用自动化工具来写着陆页。所幸，在yeoman上找到了相应的generator,安装完成，终于从石器时代进化到现代啦！</p>
+<h2 id="0"><a href="#0" class="headerlink" title="0"></a>0</h2><p>既然用到了自动化那就肯定得要有node环境啦，这是我本地的环境。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">C:\Users\jinge&gt;node -v</div><div class="line">v6.9.1</div><div class="line">C:\Users\jinge&gt;npm -v</div><div class="line">3.10.8</div></pre></td></tr></table></figure></p>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>第一步安装yeoman，bower和gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g yo bower gulp</div></pre></td></tr></table></figure></p>
+<p>安装完检查<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">C:\Users\jinge&gt;gulp -v</div><div class="line">[21:20:47] CLI version 3.9.1</div><div class="line"></div><div class="line">C:\Users\jinge&gt;bower -v</div><div class="line">1.8.0</div><div class="line"></div><div class="line">C:\Users\jinge&gt;yo doctor</div><div class="line"></div><div class="line">Yeoman Doctor</div><div class="line">Running sanity checks on your system</div><div class="line"></div><div class="line">√ Global configuration file is valid</div><div class="line">√ NODE_PATH matches the npm root</div><div class="line">√ Node.js version</div><div class="line">√ No .bowerrc file in home directory</div><div class="line">√ No .yo-rc.json file in home directory</div><div class="line">√ npm version</div><div class="line"></div><div class="line">Everything looks all right!</div></pre></td></tr></table></figure></p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>安装完成没有问题后，下载generator<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g generator-yeomify-landing</div></pre></td></tr></table></figure></p>
+<p>安装完成后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yo yeomify-landing</div></pre></td></tr></table></figure></p>
+<p>创建项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">C:\Users\jinge\work\landing&gt;yo yeomify-landing</div><div class="line"></div><div class="line">     _-----_     ╭──────────────────────────╮</div><div class="line">    |       |    │   Yeoman generator for   │</div><div class="line">    |--(o)--|    │  landing project powered │</div><div class="line">   `---------´   │         by Gulp!         │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |</div><div class="line">   __&apos;.___.&apos;__</div><div class="line"> ´   `  |° ´ Y `</div><div class="line"></div><div class="line">? What is your app&apos;s name? landing</div><div class="line">? What is your app&apos;s description? landing</div><div class="line">? Would you install pug as template engine? No</div><div class="line">? What css preprocessor would you use? stylus</div><div class="line">? Would you install modernizr and normalize libraries? Yes</div></pre></td></tr></table></figure></p>
+<p>然后输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>在bower.js中设置所需的jquery版本和其他包版本。<br>再用bower安装这些包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bower install</div></pre></td></tr></table></figure></p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p><code>gulp watch</code> 在app文件夹下面启动一个watcher;<br><code>gulp build</code> 将项目导出到dist文件夹下;<br><code>gulp build –abspaths</code> 使用绝对路径把项目文件导出到dist文件夹中(css and js files);<br><code>gulp build:watch</code> 在dist文件夹下面启动一个watcher;<br><code>gulp build:clean</code> 删除dist和.tmp两个文件夹。（dist为输出文件夹，.tmp为watch产生的临时文件夹）</p>
+<p>watch项目后，就可以在浏览器中访问项目，默认的端口是3000</p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2017/01/04/landingpage/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2017 Jake Seru | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
