@@ -45,6 +45,40 @@
 
 	<article>
 	
+		<h1><a href="/2017/01/09/route/">双路由器无线桥接</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2017-01-09</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-link" href="/tags/路由/">路由</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>现在的路由器不管有多少天线，但是总会有覆盖不到的死角。因此，还是需要配置一个路由中继来增强网络</p>
+<h2 id="1-材料"><a href="#1-材料" class="headerlink" title="1 材料"></a>1 材料</h2><p>带wds无线桥接功能的两台路由器，笔记本或手机一台。</p>
+<h2 id="2-设置主路由器"><a href="#2-设置主路由器" class="headerlink" title="2 设置主路由器"></a>2 设置主路由器</h2><p>主路由器成功链接猫后，打开无线设置，设置一个固定的信道。保存重启路由<br><figure class="figure"><img src="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170109222613.png" alt="信道设置"><figcaption class="figure__caption">信道设置</figcaption></figure></p>
+<p>记录主路由器的DNS服务器地址，以便设置副路由器<br><figure class="figure"><img src="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170109222622.png" alt="DNS服务器地址"><figcaption class="figure__caption">DNS服务器地址</figcaption></figure></p>
+<h2 id="3-设置副路由器"><a href="#3-设置副路由器" class="headerlink" title="3 设置副路由器"></a>3 设置副路由器</h2><p>设置副路由器的LAN口地址，将主副路由的LAN口地址分开，防止冲突无法进入管理界面<br><figure class="figure"><img src="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170109224814.png" alt="LAN口设置"><figcaption class="figure__caption">LAN口设置</figcaption></figure></p>
+<p>打开副路由器的无线设置，开启WDS功能。然后扫描无线网络，再选定主路由器的无线信号，输入密钥，保存，重启路由<br><figure class="figure"><img src="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170109222637.png" alt="副路由无线设置"><figcaption class="figure__caption">副路由无线设置</figcaption></figure></p>
+<p>关闭副路由器的DHCP服务器，防止主副路由ip地址分配冲突<br><figure class="figure"><img src="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170109222659.png" alt="DHCP服务器设置"><figcaption class="figure__caption">DHCP服务器设置</figcaption></figure></p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
 		<h1><a href="/2017/01/04/atom/">atom</a></h1>
 	
 	<div class="article__infos">
@@ -352,41 +386,9 @@
 
 
 
-	<article>
-	
-		<h1><a href="/2016/12/20/hello-world/">Hello World</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2016-12-20</span><br />
-		
-		
-	</div>
 
-	
+	<span class="different-posts">📖 <a href="/page/2">more posts</a> 📖</span>
 
-	
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-
-
-	<span class="different-posts">📕 end of posts 📕</span>
 
 
 	</main>
