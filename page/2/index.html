@@ -154,71 +154,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-angularTips" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/26/angularTips/">AngularTips</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/26/angularTips/" class="archive-article-date">
-  	<time datetime="2016-12-26T14:18:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近用angular1做了个项目，项目马上快结束了，但遇到个大问题–网站的SEO优化。按照SEO的同事的要求，需要在地址栏中输入参数就可以查询。不过我们使用的是ui-route,是使用下面这种方式来进行页面间传值:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.state(<span class="string">'tab.result'</span>,&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">'/result/:country/:city/:region/:pricerange/:room/:forsale/:type/:indoor/:outdoor'</span>,</div><div class="line">    <span class="attr">views</span>:&#123;</div><div class="line">        <span class="string">'tab-dash'</span>:&#123;</div><div class="line">            <span class="attr">templateUrl</span>:<span class="string">'templates/result.html'</span>,</div><div class="line">            <span class="attr">controller</span>:<span class="string">'resultCtrl'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>这种传值方法有个很大的问题，就是参数为空时，url地址就会产生很多斜杠<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result/country////////</div></pre></td></tr></table></figure></p>
-<p>后来请教大神，才得知上面这种方式是参数必传，还有一种是参数可以选传<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.state(<span class="string">'tab.refresh'</span>,&#123;</div><div class="line">    <span class="attr">url</span>:<span class="string">'/refresh/:country?/:city?/:region?/:pricerange?/:room?/:forsale?/:type?/:indoor?/:outdoor?'</span>,</div><div class="line">    <span class="attr">views</span>:&#123;</div><div class="line">        <span class="string">'tab-dash'</span>:&#123;</div><div class="line">            <span class="attr">templateUrl</span>:<span class="string">'templates/refresh.html'</span>,</div><div class="line">            <span class="attr">controller</span>:<span class="string">'refreshCtrl'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>修改后的url地址就为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">refresh?country=US&amp;city=1231</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">angular1</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/26/angularTips/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-carouselFigure" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -382,11 +317,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">angular1</a>
+                <a href="javascript:void(0)" class="js-tag color5">atom plug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">atom plug</a>
+                <a href="javascript:void(0)" class="js-tag color4">angular1</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -394,19 +329,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ionic,angular,googleAD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">无限轮播图Demo</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ionic,angular,googleAD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yeoman,gulp,bower,landingpage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ionic,angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -415,10 +354,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yeoman,gulp,bower,landingpage</a>
               </li>
              
               <li class="article-tag-list-item">
