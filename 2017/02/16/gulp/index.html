@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: ionic,angular | ThinkLife</title>
+  <title>gulp | ThinkLife</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Think with your life!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ThinkLife">
-<meta property="og:url" content="http://yoursite.com/tags/ionic-angular/index.html">
+  <meta name="description" content="1 写在前面的废话开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。
+2 用gulp启动一个服务器容器以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp">
+<meta property="og:url" content="http://yoursite.com/2017/02/16/gulp/index.html">
 <meta property="og:site_name" content="ThinkLife">
-<meta property="og:description" content="Think with your life!">
+<meta property="og:description" content="1 写在前面的废话开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。
+2 用gulp启动一个服务器容器以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在">
+<meta property="og:image" content="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170217112743.png">
+<meta property="og:image" content="http://ojioqa2pk.bkt.clouddn.com/l.png">
+<meta property="og:image" content="http://ojioqa2pk.bkt.clouddn.com/l%20%281%29.png">
+<meta property="og:updated_time" content="2017-02-17T13:15:08.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ThinkLife">
-<meta name="twitter:description" content="Think with your life!">
+<meta name="twitter:title" content="gulp">
+<meta name="twitter:description" content="1 写在前面的废话开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。
+2 用gulp启动一个服务器容器以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在">
+<meta name="twitter:image" content="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170217112743.png">
   
     <link rel="alternative" href="/atom.xml" title="ThinkLife" type="application/atom+xml">
   
@@ -152,60 +160,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-gulp" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/03/ionicSlide/" class="archive-article-date">
-  	<time datetime="2017-01-03T13:44:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/03/ionicSlide/">ionicSlide</a>
+    <h1 class="article-title" itemprop="name">
+      gulp
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/16/gulp/" class="archive-article-date">
+  	<time datetime="2017-02-16T14:42:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-写在前面的废话"><a href="#1-写在前面的废话" class="headerlink" title="1 写在前面的废话"></a>1 写在前面的废话</h2><p>开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。</p>
+<h2 id="2-用gulp启动一个服务器容器"><a href="#2-用gulp启动一个服务器容器" class="headerlink" title="2 用gulp启动一个服务器容器"></a>2 用gulp启动一个服务器容器</h2><p>以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在nodejs的兴起，gulp.grunt等这类工具可以替代以前的臃肿的容器。</p>
+<p>在文件目录下使用npm生成package.json,并且安装本地版本的gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm init</div><div class="line">npm install gulp --save-dev</div></pre></td></tr></table></figure></p>
+<p>安装需要的gulp工具<br>这边需要的是gulp-connect<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp-connect --save-dev</div></pre></td></tr></table></figure></p>
+<p>新建一个gulpfile.js文件<br>引入gulp和gulp-connect模块,新建一个task，配置服务器基本信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&quot;gulp&quot;);</div><div class="line">var connect = require(&quot;gulp-connect&quot;);</div><div class="line">//server</div><div class="line">gulp.task(&apos;server&apos;,function()&#123;</div><div class="line">	connect.server(&#123;</div><div class="line">		root:&apos;./&apos;,</div><div class="line">		livereload:true,</div><div class="line">		port:8320</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>然后就可以在命令行下输入”gulp server”来启动服务<br><img src="http://ojioqa2pk.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170217112743.png" alt="服务启动效果"><br>但。。。。。<br><img src="http://ojioqa2pk.bkt.clouddn.com/l.png" alt="something wrong"></p>
+<h2 id="3-用gulp来自动刷新页面"><a href="#3-用gulp来自动刷新页面" class="headerlink" title="3 用gulp来自动刷新页面"></a>3 用gulp来自动刷新页面</h2><p>如果gulp就仅仅能起一个服务器容器的作用，那就错啦。grunt可以写一个功能就是在每次保存文件后，页面自动刷新，所以猜想gulp一样也能够达到相同的效果。</p>
+<p>在2的基础上，继续引入gulp-livereload模块(请事先安装模块)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp-livereload --save-dev</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var livereload = require(&quot;gulp-livereload&quot;);</div></pre></td></tr></table></figure>
+<p>创建html/css/javascript的task,每个task调用livereload方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//html</div><div class="line">gulp.task(&apos;html&apos;, function () &#123;</div><div class="line">  gulp.src(&apos;./*.html&apos;)</div><div class="line">    .pipe(livereload());</div><div class="line">&#125;);</div><div class="line">//css</div><div class="line">gulp.task(&apos;css&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;./css/*.css&apos;)</div><div class="line">	.pipe(livereload());</div><div class="line">&#125;)</div><div class="line">//javascript</div><div class="line">gulp.task(&apos;js&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;./js/*.js&apos;)</div><div class="line">	.pipe(livereload());</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>再使用gulp的watch来监视文件的变动，这里再写一个监视的task<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//watch</div><div class="line">gulp.task(&apos;watch&apos;,function()&#123;</div><div class="line">	gulp.watch([&apos;./*.html&apos;],[&apos;html&apos;]);</div><div class="line">	gulp.watch([&apos;./css/*.css&apos;],[&apos;css&apos;]);</div><div class="line">	gulp.watch([&apos;./js/*.js&apos;],[&apos;js&apos;]);</div><div class="line">	livereload.listen();</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>然后将监听task添加到start task中，使在start task启动时自动调用监听task<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;start&apos;,[&apos;server&apos;,&apos;watch&apos;]);</div></pre></td></tr></table></figure></p>
+<p>现在就可以实时刷新页面啦~~~<br><img src="http://ojioqa2pk.bkt.clouddn.com/l%20%281%29.png" alt="something wrong again"></p>
+<h2 id="4-实时刷新与前端预处理结合"><a href="#4-实时刷新与前端预处理结合" class="headerlink" title="4 实时刷新与前端预处理结合"></a>4 实时刷新与前端预处理结合</h2><p>从前端预处理出现到现在已经有很长一段时间里，所以在用的看官老爷应该不少吧。加入预处理是必要的，但是前端预处理的语言有好几种，怎么支持几个不同的前端预处理变成了问题。</p>
+<p>首先引入对应的gulp插件以支持预处理的自动编译,这里使用stylus,less,sass做栗子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp-stylus gulp-less gulp-sass --save-dev</div></pre></td></tr></table></figure></p>
+<p>在js中引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var less = require(&quot;gulp-less&quot;),</div><div class="line">		sass = require(&quot;gulp-sass&quot;),</div><div class="line">		styl = require(&quot;gulp-stylus&quot;);</div></pre></td></tr></table></figure></p>
+<p>创建对应的task<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;styl&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;css/*.styl&apos;)</div><div class="line">	.pipe(stylus())</div><div class="line">	.pipe(gulp.dest(&apos;css&apos;));</div><div class="line">&#125;)</div><div class="line">gulp.task(&apos;less&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;css/*.less&apos;)</div><div class="line">	.pipe(less())</div><div class="line">	.pipe(gulp.dest(&apos;css&apos;));</div><div class="line">&#125;)</div><div class="line">gulp.task(&apos;sass&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;css/*.sass&apos;)</div><div class="line">	.pipe(sass())</div><div class="line">	.pipe(gulp.dest(&apos;css&apos;));</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>将这些task加入到watch中让gulp监视文件的改动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//watch</div><div class="line">gulp.task(&apos;watch&apos;,function()&#123;</div><div class="line">	gulp.watch([&apos;./*.html&apos;],[&apos;html&apos;]);</div><div class="line">	gulp.watch([&apos;./css/*.sass&apos;],[&apos;sass&apos;]);</div><div class="line">	gulp.watch([&apos;./css/*.less&apos;],[&apos;less&apos;]);</div><div class="line">	gulp.watch([&apos;./css/*.styl&apos;],[&apos;styl&apos;]);</div><div class="line">	gulp.watch([&apos;./css/*.css&apos;],[&apos;css&apos;]);</div><div class="line">	gulp.watch([&apos;./js/*.js&apos;],[&apos;js&apos;]);</div><div class="line">	livereload.listen();</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>OKAY这样就和css预处理结合起来了，但。。。<br>没有人会同时使用多种预处理来写同一个项目吧~！<br>所以就需要判断一下使用的是哪一种的预处理</p>
+<p>在package.js中加入自定义的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;name&quot;:&quot;gulp&quot;,</div><div class="line">	....</div><div class="line">	&quot;css&quot;:&quot;styl&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用nodejs操作文件的模块来读取package.js文件，获取到css字符串。根据这个字符串来选择对应的预处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fs = require(&quot;fs&quot;);</div><div class="line">var json = JSON.parse(fs.readFileSync(&apos;./package.json&apos;));</div><div class="line">var cssstyle = json.css;</div></pre></td></tr></table></figure></p>
+<p>在watch的task中修改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;watch&apos;,function()&#123;</div><div class="line">	gulp.watch([&apos;./*.html&apos;],[&apos;html&apos;]);</div><div class="line">	gulp.watch([&apos;./css/*.&apos;+cssstyle],[cssstyle]);</div><div class="line">	gulp.watch([&apos;./css/*.css&apos;],[&apos;css&apos;]);</div><div class="line">	gulp.watch([&apos;./js/*.js&apos;],[&apos;js&apos;]);</div><div class="line">	livereload.listen();</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>这样就可以啦，但是还有不完美的地方。。。。</p>
+<h2 id="1-写在后面的东东"><a href="#1-写在后面的东东" class="headerlink" title="-1 写在后面的东东"></a>-1 写在后面的东东</h2><p>本页用到的模块如下：<br>    1 gulp-connect 服务器模块<br>    2 gulp-livereload 自动加载模块<br>    3 gulp-stylus stylus模块<br>    4 gulp-less less模块<br>    5 gulp-sass sass模块<br>    6 fs nodejs文件操作模块</p>
+<p>小工具</p>
+<p>每次使用photoshop来切图，导出的图片的文件名都是凌乱的。所以查看了gulp的工具库发现了gulp-rename这个模块。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var rename = require(&quot;gulp-rename&quot;);</div><div class="line">gulp.task(&apos;rename&apos;,function()&#123;</div><div class="line">	var i=1;</div><div class="line">	gulp.src(&apos;./RAW/*.jpg&apos;)</div><div class="line">	.pipe(rename(function(path)&#123;</div><div class="line">		path.basename = i++;//basename就是文件名称但不包括扩展名</div><div class="line">	&#125;))</div><div class="line">	.pipe(gulp.dest(&apos;./OUT&apos;));</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ionic,angular</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端自动化</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/16/gulp/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/01/10/box/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">box</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -228,9 +350,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
