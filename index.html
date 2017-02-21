@@ -197,9 +197,16 @@
 <p>使用nodejs操作文件的模块来读取package.js文件，获取到css字符串。根据这个字符串来选择对应的预处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fs = require(&quot;fs&quot;);</div><div class="line">var json = JSON.parse(fs.readFileSync(&apos;./package.json&apos;));</div><div class="line">var cssstyle = json.css;</div></pre></td></tr></table></figure></p>
 <p>在watch的task中修改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;watch&apos;,function()&#123;</div><div class="line">	gulp.watch([&apos;./*.html&apos;],[&apos;html&apos;]);</div><div class="line">	gulp.watch([&apos;./css/*.&apos;+cssstyle],[cssstyle]);</div><div class="line">	gulp.watch([&apos;./css/*.css&apos;],[&apos;css&apos;]);</div><div class="line">	gulp.watch([&apos;./js/*.js&apos;],[&apos;js&apos;]);</div><div class="line">	livereload.listen();</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>这样就可以啦，但是还有不完美的地方。。。。</p>
-<h2 id="1-写在后面的东东"><a href="#1-写在后面的东东" class="headerlink" title="-1 写在后面的东东"></a>-1 写在后面的东东</h2><p>本页用到的模块如下：<br>    1 gulp-connect 服务器模块<br>    2 gulp-livereload 自动加载模块<br>    3 gulp-stylus stylus模块<br>    4 gulp-less less模块<br>    5 gulp-sass sass模块<br>    6 fs nodejs文件操作模块</p>
+<h2 id="0-写在后面的东东"><a href="#0-写在后面的东东" class="headerlink" title="-0 写在后面的东东"></a>-0 写在后面的东东</h2><p>本页用到的模块如下：<br>    1 gulp-connect 服务器模块<br>    2 gulp-livereload 自动加载模块<br>    3 gulp-stylus stylus模块<br>    4 gulp-less less模块<br>    5 gulp-sass sass模块<br>    6 fs nodejs文件操作模块</p>
 <p>小工具</p>
 <p>每次使用photoshop来切图，导出的图片的文件名都是凌乱的。所以查看了gulp的工具库发现了gulp-rename这个模块。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var rename = require(&quot;gulp-rename&quot;);</div><div class="line">gulp.task(&apos;rename&apos;,function()&#123;</div><div class="line">	var i=1;</div><div class="line">	gulp.src(&apos;./RAW/*.jpg&apos;)</div><div class="line">	.pipe(rename(function(path)&#123;</div><div class="line">		path.basename = i++;//basename就是文件名称但不包括扩展名</div><div class="line">	&#125;))</div><div class="line">	.pipe(gulp.dest(&apos;./OUT&apos;));</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="写在后面的后面"><a href="#写在后面的后面" class="headerlink" title="写在后面的后面"></a>写在后面的后面</h2><p>既然gulp是一个自动化工具，那么项目完成后肯定有打包这一步骤，所有我又对这个gulp任务进行了修改</p>
+<h2 id="1-新建文件压缩task，包括js，css，html和image"><a href="#1-新建文件压缩task，包括js，css，html和image" class="headerlink" title="-1 新建文件压缩task，包括js，css，html和image"></a>-1 新建文件压缩task，包括js，css，html和image</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//压缩js文件</div><div class="line">gulp.task(&apos;minifyjs&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;./app/js/*js&apos;)</div><div class="line">	.pipe(uglify())</div><div class="line">	.pipe(rename(&#123;suffix:&apos;.min&apos;&#125;))</div><div class="line">	.pipe(gulp.dest(&apos;dist/js&apos;));</div><div class="line">&#125;);</div><div class="line">//压缩图片</div><div class="line">gulp.task(&apos;imgmin&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;./app/images/*&apos;)</div><div class="line">	.pipe(imagemin())</div><div class="line">	.pipe(gulp.dest(&apos;dist/images&apos;));</div><div class="line">&#125;)</div><div class="line">//压缩Css</div><div class="line">gulp.task(&apos;cssmin&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;./app/css/*.css&apos;)</div><div class="line">	.pipe(cssmin())</div><div class="line">	.pipe(rename(&#123;suffix:&apos;.min&apos;&#125;))</div><div class="line">	.pipe(gulp.dest(&apos;dist/css&apos;));</div><div class="line">&#125;)</div><div class="line">//压缩html,修改html引入文件名</div><div class="line">gulp.task(&apos;htmlmin&apos;,function()&#123;</div><div class="line">	gulp.src(&apos;./app/*.html&apos;)</div><div class="line">	.pipe(processhtml())</div><div class="line">	.pipe(htmlmin(&#123;collapseWhitespace:true&#125;))</div><div class="line">	.pipe(gulp.dest(&apos;dist&apos;));</div><div class="line">&#125;)</div><div class="line">gulp.task(&apos;build&apos;,[&apos;minifyjs&apos;,&apos;imgmin&apos;,&apos;cssmin&apos;,&apos;htmlmin&apos;]);</div></pre></td></tr></table></figure>
+<p>首先新建各种文件的压缩task，但这里有几个问题，压缩处理后的文件名需要与源文件有所区别，因而还要经过一道步骤，重命名文件。重命名文件后，又带来一个问题，在html种引入的文件与现实的文件不同，所以要修改html文件。修改如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;zh-cn&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;DEMO&lt;/title&gt;</div><div class="line">	&lt;!-- build:css css/style.min.css--&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;</div><div class="line">	&lt;!-- /build--&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;h1&gt;HELLO GULP&lt;/h1&gt;</div><div class="line">	&lt;h2&gt;something&lt;/h2&gt;</div><div class="line">	&lt;h3&gt;Test new file position&lt;/h3&gt;</div><div class="line">	&lt;hr&gt;</div><div class="line">	&lt;!--build:js js/main.min.js--&gt;</div><div class="line">	&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;!--/build--&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="2-引入文件优化"><a href="#2-引入文件优化" class="headerlink" title="-2 引入文件优化"></a>-2 引入文件优化</h2><p>在引入文件优化前代码是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&quot;gulp&quot;);</div><div class="line">var rename = require(&quot;gulp-rename&quot;);</div><div class="line">var less = require(&quot;gulp-less&quot;);</div><div class="line">var sass = require(&quot;gulp-sass&quot;);</div><div class="line">var styl = require(&quot;gulp-stylus&quot;);</div><div class="line">var connect = require(&quot;gulp-connect&quot;);</div><div class="line">var livereload = require(&apos;gulp-livereload&apos;);</div><div class="line"></div><div class="line">var uglify = require(&apos;gulp-uglify-cli&apos;);//压缩js</div><div class="line">var imgmin = require(&apos;gulp-imagemin&apos;);//压缩图片</div><div class="line">var cssmin = require(&apos;gulp-cssmin&apos;);//压缩css</div><div class="line">var htmlmin = require(&apos;gulp-htmlmin&apos;);//压缩html</div><div class="line">var processhtml = require(&apos;gulp-processhtml&apos;);//修改html中引入的文件名</div></pre></td></tr></table></figure></p>
+<p>身为能省则省能懒则懒的好男儿，当然不能允许这种情况出现。又找了个模块gulp-load-plugins,现在的代码是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&quot;gulp&quot;);</div><div class="line">var $ = require(&apos;gulp-load-plugins&apos;)();</div></pre></td></tr></table></figure></p>
+<p>当然相应的方法调用时，也要进行修改。gulp-load-plugins模块是讲每个模块都加载到$上，使用的时候就以$.foo的方式调用。</p>
+<p><a href="https://github.com/JingeXC/gulp-learning" target="_blank" rel="external">git地址</a></p>
 
       
 
@@ -945,11 +952,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">atom plug</a>
+                <a href="javascript:void(0)" class="js-tag color4">angular1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">angular1</a>
+                <a href="javascript:void(0)" class="js-tag color4">html,css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">atom plug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -961,19 +972,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ionic,angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">html,css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ionic,angular,googleAD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yeoman,gulp,bower,landingpage</a>
+                <a href="javascript:void(0)" class="js-tag color4">ionic,angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -981,11 +984,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">StaticStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路由</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">StaticStorage</a>
+                <a href="javascript:void(0)" class="js-tag color5">yeoman,gulp,bower,landingpage</a>
               </li>
              
               <li class="article-tag-list-item">
